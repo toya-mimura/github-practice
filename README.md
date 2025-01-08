@@ -1,0 +1,2 @@
+# github-practice
+Claude先生付き添いによるGitHub基礎学習用のリポジトリです
