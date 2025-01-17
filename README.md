@@ -48,3 +48,38 @@ print("Hello, GitHub!")
 | コミット | 変更を記録 | ★ |
 | ブランチ | 分岐を作成 | ★★ |
 | マージ | 変更を統合 | ★★★ |
+
+## Gitコマンドカンペ
+
+### 投稿手順
+
+1. 変更状態の確認
+```bash
+git status
+```
+
+2. 新規・変更された投稿の追加
+```bash
+git add _posts/*.md
+```
+
+3. 変更の確定
+```bash
+git commit -m "Update posts"
+```
+
+4. GitHubに反映
+```bash
+git push origin main
+```
+
+5. 新しいブランチを作成して切り替え
+git switch -c ブランチ名
+
+6. 既存ブランチに切り替え
+git switch ブランチ名
+
+
+7. 新しいブランチの作成と切り替え
+
+git checkout -b ブランチ名
