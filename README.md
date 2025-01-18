@@ -53,37 +53,66 @@ print("Hello, GitHub!")
 
 ### 投稿手順
 
-1. 変更状態の確認
+#### 1. 変更状態の確認
 ```bash
 git status
 ```
+- 現在のブランチは？
+```
+git branch
+```  
 
-2. 新規・変更された投稿の追加
+#### 2. ブランチの移動
+- 移動する
+```
+git checkout 既存ブランチ名
+```
+```
+git switch 既存ブランチ名
+```
+- 新規ブランチを作ってそっちへ移動
+```
+git switch -c 新規ブランチ名
+```
+```
+git checkout -b 新規ブランチ名
+```
+
+#### 3. 新規・変更された投稿の追加
 ```bash
 git add _posts/*.md
 ```
 
-3. 変更の確定
+#### 4. 変更の確定（""内が変更内容のコメント）
+- commit = ステージング（俎上に載せる）
 ```bash
 git commit -m "Update posts"
 ```
 
-4. GitHubに反映
+#### 5. GitHubに反映：PR（Pull Request）
+- マージを行うためのリモートへの「提案」
+- 「このブランチの変更内容をmainに取り込んでいい？」という申請。
+- この後にMergeが来る。
 ```bash
 git push origin main
 ```
 
-5. 新しいブランチを作成して切り替え
+#### 6. ブランチの変更をmainにマージ（統合）：２つのブランチの内容を一つにまとめる
+- mainブランチに移動してから、統合したいブランチ名を指定して`git merge`
 ```
-git switch -c ブランチ名
-```
-
-7. 既存ブランチに切り替え
-```
-git switch ブランチ名
+git checkout main
+git merge ブランチ名
 ```
 
-8. 新しいブランチの作成と切り替え
+#### 7. そのほか
+- 現在のワークスペースで変更をすべて取り消し
 ```
-git checkout -b ブランチ名
+git reset --hard origin/main
+git clean -fd
 ```
+- リポジトリの新規クローン
+```
+git clone https://github.com/toya-mimura/solpar.git workspace
+cd workspace
+```
+
